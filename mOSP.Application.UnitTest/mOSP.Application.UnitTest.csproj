@@ -26,7 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MedItems\Commands\" />
     <Folder Include="MedItems\Queries\" />
   </ItemGroup>
 
