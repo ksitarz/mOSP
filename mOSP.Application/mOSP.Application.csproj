@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Functions\MedKits\Commands\" />
     <Folder Include="Functions\OSP\Commands\" />
     <Folder Include="Functions\OSP\Queries\" />
   </ItemGroup>

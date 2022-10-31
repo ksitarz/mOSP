@@ -56,5 +56,59 @@ namespace mOSP.Application.UnitTest.MedItems
             response.ItemId.ShouldNotBeNull();
         }
 
+        [Fact]
+        public async Task Handle_Valid_MedItem_EmptyName()
+        {
+            var handler = new CreatedMedItemCommandHandler(_mockMedItemRepository.Object, _mapper);
+
+            var allMedItemsBeforeCount = (await _mockMedItemRepository.Object.GetAllAsync()).Count;
+
+            var command = new CreatedMedItemCommand()
+            {
+
+                Name = "",
+                CreatedDate = DateTime.Now,
+                ContainerId = 1,
+                ExpirationDate = DateTime.Now.AddDays(56),
+                IsIgnored = false
+            };
+
+            var response = await handler.Handle(command, CancellationToken.None);
+
+            var allMedItems = await _mockMedItemRepository.Object.GetAllAsync();
+
+            response.Success.ShouldBe(false);
+            response.ValidationErrors.Count.ShouldBe(1);
+            allMedItems.Count.ShouldBe(allMedItemsBeforeCount);
+            response.ItemId.ShouldBeNull();
+        }
+
+        [Fact]
+        public async Task Handle_Valid_MedItem_ExpiredDate()
+        {
+            var handler = new CreatedMedItemCommandHandler(_mockMedItemRepository.Object, _mapper);
+
+            var allMedItemsBeforeCount = (await _mockMedItemRepository.Object.GetAllAsync()).Count;
+
+            var command = new CreatedMedItemCommand()
+            {
+
+                Name = "Item6",
+                CreatedDate = DateTime.Now,
+                ContainerId = 1,
+                ExpirationDate = DateTime.Now,
+                IsIgnored = false
+            };
+
+            var response = await handler.Handle(command, CancellationToken.None);
+
+            var allMedItems = await _mockMedItemRepository.Object.GetAllAsync();
+
+            response.Success.ShouldBe(false);
+            response.ValidationErrors.Count.ShouldBe(1);
+            allMedItems.Count.ShouldBe(allMedItemsBeforeCount);
+            response.ItemId.ShouldBeNull();
+        }
+
     }
 }
