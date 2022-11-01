@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Functions\OSP\Commands\" />
-    <Folder Include="Functions\OSP\Queries\" />
+    <Folder Include="Functions\OSPs\Queries\" />
   </ItemGroup>
 
 </Project>

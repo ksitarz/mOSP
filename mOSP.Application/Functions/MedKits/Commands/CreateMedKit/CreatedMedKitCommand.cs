@@ -12,9 +12,6 @@ namespace mOSP.Application.Functions.MedKits.Commands
         public DateTime CreatedDate { get; set; }
 
         public int OspId { get; set; }
-        
-
-        public ICollection<Item> Items { get; set; }
          
         public ContainerTypes ContainerType { get; set; }
     }
