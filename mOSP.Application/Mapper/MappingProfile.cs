@@ -3,7 +3,7 @@ using mOSP.Application.Functions.MedItems;
 using mOSP.Application.Functions.MedItems.Commands;
 using mOSP.Application.Functions.MedKits;
 using mOSP.Application.Functions.MedKits.Commands;
-using mOSP.Application.Functions.OSP.Commands;
+using mOSP.Application.Functions.OSPs.Commands;
 using mOSP.Domain.Entities;
 
 namespace mOSP.Application.Mapper
@@ -19,6 +19,7 @@ namespace mOSP.Application.Mapper
             CreateMap<MedKit, CreatedMedKitCommand>().ReverseMap();
             CreateMap<MedKit, UpdateMedKitCommand>().ReverseMap();
             CreateMap<OSP, CreatedOSPCommand>().ReverseMap();
+            CreateMap<OSP, UpdateOSPCommand>().ReverseMap();
         }
     }
 }
