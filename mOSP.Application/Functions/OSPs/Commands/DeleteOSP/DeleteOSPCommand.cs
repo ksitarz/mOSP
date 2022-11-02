@@ -9,6 +9,6 @@ namespace mOSP.Application.Functions.OSPs.Commands
 {
     public class DeleteOSPCommand : IRequest
     {
-        public int OspId { get; set; };
+        public int OspId { get; set; }
     }
 }
