@@ -9,6 +9,6 @@ namespace mOSP.Domain.Entities
 {
     public class MedKit : Container
     {
-        public ContainerTypes ContainerTypes { get; set; } 
+        public ContainerTypes ContainerType { get; set; } 
     }
 }

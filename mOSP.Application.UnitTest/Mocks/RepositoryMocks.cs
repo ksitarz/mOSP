@@ -38,6 +38,60 @@ namespace mOSP.Application.UnitTest.Mocks
             return mockMedItemRepository;
         }
 
+        public static Mock<IMedKitRepository> GetMedKitRepository()
+        {
+            var medKits = GetMedKits();
+
+            var mockMedKitRepository = new Mock<IMedKitRepository>();
+            mockMedKitRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(medKits);
+
+            mockMedKitRepository.Setup(repo => repo.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((int id) =>
+            {
+                var continer = medKits.FirstOrDefault(i => i.ContainerId == id);
+                return continer;
+            });
+
+            mockMedKitRepository.Setup(repo => repo.AddAsync(It.IsAny<MedKit>())).ReturnsAsync(
+                (MedKit medKit) =>
+                {
+                    medKits.Add(medKit);
+                    return medKit;
+                });
+
+            mockMedKitRepository.Setup(repo => repo.DeleteAsync(It.IsAny<MedKit>())).Callback<MedKit>((entity) => medKits.Remove(entity));
+
+            mockMedKitRepository.Setup(repo => repo.UpdateAsync(It.IsAny<MedKit>())).Callback<MedKit>((entity) => { medKits.Remove(entity); medKits.Add(entity); });
+
+            return mockMedKitRepository;
+        }
+
+        public static Mock<IOspRepository> GetOspRepository()
+        {
+            var osps = GetOSPs();
+
+            var mockOspRepository = new Mock<IOspRepository>();
+            mockOspRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(osps);
+
+            mockOspRepository.Setup(repo => repo.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((int id) =>
+            {
+                var osp = osps.FirstOrDefault(i => i.OspId == id);
+                return osp;
+            });
+
+            mockOspRepository.Setup(repo => repo.AddAsync(It.IsAny<OSP>())).ReturnsAsync(
+                (OSP osp) =>
+                {
+                    osps.Add(osp);
+                    return osp;
+                });
+
+            mockOspRepository.Setup(repo => repo.DeleteAsync(It.IsAny<OSP>())).Callback<OSP>((entity) => osps.Remove(entity));
+
+            mockOspRepository.Setup(repo => repo.UpdateAsync(It.IsAny<OSP>())).Callback<OSP>((entity) => { osps.Remove(entity); osps.Add(entity); });
+
+            return mockOspRepository;
+        }
+
         public static List<MedItem> GetMedItems()
         {
             MedItem i1 = new MedItem()
