@@ -10,7 +10,7 @@ namespace mOSP.Application.Functions.OSPs.Commands
 {
     public class CreatedOSPCommandResponse : BaseResponse
     {
-        public int? ContainerId { get; set; }
+        public int? OspId { get; set; }
 
         public CreatedOSPCommandResponse() : base()
         {
@@ -28,9 +28,9 @@ namespace mOSP.Application.Functions.OSPs.Commands
         {
         }
 
-        public CreatedOSPCommandResponse(int itemId)
+        public CreatedOSPCommandResponse(int ospId)
         {
-            ContainerId = itemId;
+            OspId = ospId;
         }
     }
 }

@@ -28,6 +28,7 @@
   <ItemGroup>
     <Folder Include="MedItems\Queries\" />
     <Folder Include="MedKits\Queries\" />
+    <Folder Include="OSPs\Queries\" />
   </ItemGroup>
 
 </Project>

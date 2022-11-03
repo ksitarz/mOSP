@@ -23,9 +23,9 @@ namespace mOSP.Application.Functions.MedKits.Commands
         {
         }
 
-        public CreatedMedKitCommandResponse(int itemId)
+        public CreatedMedKitCommandResponse(int containerId)
         {
-            ContainerId = itemId;
+            ContainerId = containerId;
         }
     }
 }
