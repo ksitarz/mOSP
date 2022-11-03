@@ -22,9 +22,8 @@ namespace mOSP.Application.Functions.MedKits.Commands
                 .NotNull();
 
             RuleFor(k => k.ContainerType)
-                .NotEmpty()
-                .WithMessage("{PropertyName} is required")
-                .NotNull();
+                .IsInEnum()
+                .WithMessage("{PropertyName} is required");
         }
     }
 }

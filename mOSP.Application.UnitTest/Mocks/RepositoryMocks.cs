@@ -161,6 +161,7 @@ namespace mOSP.Application.UnitTest.Mocks
             {
                 ContainerId = 1,
                 Name = "Kit1",
+                OspId = 1,
                 CreatedDate = DateTime.Now,
                 
             };
@@ -169,6 +170,7 @@ namespace mOSP.Application.UnitTest.Mocks
             {
                 ContainerId = 2,
                 Name = "Kit2",
+                OspId = 1,
                 CreatedDate = DateTime.Now,
 
             };
@@ -177,6 +179,7 @@ namespace mOSP.Application.UnitTest.Mocks
             {
                 ContainerId = 3,
                 Name = "Kit3",
+                OspId = 1,
                 CreatedDate = DateTime.Now,
 
             };
@@ -185,6 +188,7 @@ namespace mOSP.Application.UnitTest.Mocks
             {
                 ContainerId = 4,
                 Name = "Kit4",
+                OspId = 1,
                 CreatedDate = DateTime.Now,
 
             };
@@ -193,6 +197,7 @@ namespace mOSP.Application.UnitTest.Mocks
             {
                 ContainerId = 5,
                 Name = "Kit5",
+                OspId = 1,
                 CreatedDate = DateTime.Now,
 
             };
