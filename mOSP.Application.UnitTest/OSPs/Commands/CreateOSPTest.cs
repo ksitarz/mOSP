@@ -33,7 +33,7 @@ namespace mOSP.Application.UnitTest.OSPs.Commands
         }
 
         [Fact]
-        public async Task Handle_Valid_OSP_AddedToRepo()
+        public async Task Handle_ValidOSP_AddedToRepo()
         {
             var handler = new CreatedOSPCommandHandler(_mockOspRepository.Object, _mapper);
 
@@ -55,7 +55,7 @@ namespace mOSP.Application.UnitTest.OSPs.Commands
         }
 
         [Fact]
-        public async Task Handle_Valid_OSP_EmptyName()
+        public async Task Handle_ValidOSPEmptyName_NotAddedToPostRepo()
         {
             var handler = new CreatedOSPCommandHandler(_mockOspRepository.Object, _mapper);
 
