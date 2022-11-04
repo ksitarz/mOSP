@@ -30,7 +30,7 @@ namespace mOSP.Application.UnitTest.MedItems
         }
 
         [Fact]
-        public async Task Handle_Valid_MedItem_AddedToRepo()
+        public async Task Handle_ValidMedItem_AddedToRepo()
         {
             var handler = new CreatedMedItemCommandHandler(_mockMedItemRepository.Object, _mapper);
             
@@ -57,7 +57,7 @@ namespace mOSP.Application.UnitTest.MedItems
         }
 
         [Fact]
-        public async Task Handle_Valid_MedItem_EmptyName()
+        public async Task Handle_ValidMedItemEmptyName_NotAddedToPostRepo()
         {
             var handler = new CreatedMedItemCommandHandler(_mockMedItemRepository.Object, _mapper);
 
@@ -84,7 +84,7 @@ namespace mOSP.Application.UnitTest.MedItems
         }
 
         [Fact]
-        public async Task Handle_Valid_MedItem_ExpiredDate()
+        public async Task Handle_ValidMedItemExpiredDate_NotAddedToPostRepo()
         {
             var handler = new CreatedMedItemCommandHandler(_mockMedItemRepository.Object, _mapper);
 

@@ -31,7 +31,7 @@ namespace mOSP.Application.UnitTest.MedKits.Commands
         }
 
         [Fact]
-        public async Task Handle_Valid_MedKit_AddedToRepo()
+        public async Task Handle_ValidMedKit_AddedToRepo()
         {
             var handler = new CreatedMedKitCommandHandler(_mockMedKitRepository.Object, _mapper);
 
@@ -57,7 +57,7 @@ namespace mOSP.Application.UnitTest.MedKits.Commands
         }
 
         [Fact]
-        public async Task Handle_Valid_MedKit_EmptyName()
+        public async Task Handle_ValidMedKitEmptyName_NotAddedToPostRepo()
         {
             var handler = new CreatedMedKitCommandHandler(_mockMedKitRepository.Object, _mapper);
 
@@ -82,7 +82,7 @@ namespace mOSP.Application.UnitTest.MedKits.Commands
         }
 
         [Fact]
-        public async Task Handle_Valid_MedKit_EmptyOspId()
+        public async Task Handle_ValidMedKitEmptyOspId_NotAddedToPostRepo()
         {
             var handler = new CreatedMedKitCommandHandler(_mockMedKitRepository.Object, _mapper);
 
