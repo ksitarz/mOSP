@@ -25,7 +25,6 @@ namespace mOSP.Application.Functions.MedKits.Queries
             var list = await _medKitRepository.GetMedKitWithItem(request.SearchOptions);
             return _mapper.Map<List<MedKitViewModel>>(list);
 
-
         }
     }
 }
