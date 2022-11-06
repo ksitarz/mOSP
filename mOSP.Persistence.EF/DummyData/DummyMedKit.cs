@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace mOSP.Persistence.EF.DummyData
 {
-    public class DumyMedKit
+    public class DummyMedKit
     {
         public static List<MedKit> Get()
         {
