@@ -22,7 +22,7 @@ namespace mOSP.Application.Functions.MedKits.Queries
 
         public async Task<List<MedKitViewModel>> Handle(GetMedKitWithItemListQuery request, CancellationToken cancellationToken)
         {
-            var list = await _medKitRepository.GetMedKitWithItem(request.SearchOptions);
+            var list = await _medKitRepository.GetMedKitWithItem(request.ContainerId, request.SearchOptions);
             return _mapper.Map<List<MedKitViewModel>>(list);
 
         }

@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using mOSP.Domain.Entities;
 using mOSP.Persistence.EF.DummyData;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mOSP.Persistence.EF
 {

@@ -6,7 +6,7 @@ namespace mOSP.Application
 {
     public static class ApplicationInstallation
     {
-        public static IServiceCollection Install(this IServiceCollection services)
+        public static IServiceCollection AddmOSPApplication(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());

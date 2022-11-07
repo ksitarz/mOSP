@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mOSP.Application", "mOSP.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mOSP.Application.UnitTest", "mOSP.Application.UnitTest\mOSP.Application.UnitTest.csproj", "{73E3592C-A422-4161-BC9A-089B9D73D45E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mOSP.Persistence.EF", "mOSP.Persistence.EF\mOSP.Persistence.EF.csproj", "{22ECBC9D-6C95-497F-98A0-BAE1204AAED7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mOSP.Persistence.EF", "mOSP.Persistence.EF\mOSP.Persistence.EF.csproj", "{22ECBC9D-6C95-497F-98A0-BAE1204AAED7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mOSP.Api", "mOSP.Api\mOSP.Api.csproj", "{52E95B63-AA7E-4F3A-BB65-093B329E1F9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{22ECBC9D-6C95-497F-98A0-BAE1204AAED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22ECBC9D-6C95-497F-98A0-BAE1204AAED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22ECBC9D-6C95-497F-98A0-BAE1204AAED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E95B63-AA7E-4F3A-BB65-093B329E1F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E95B63-AA7E-4F3A-BB65-093B329E1F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E95B63-AA7E-4F3A-BB65-093B329E1F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E95B63-AA7E-4F3A-BB65-093B329E1F9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{6CD47049-9211-40C2-8449-3EAAA9E6D21F} = {F1CCDE75-26D3-4E68-BC3F-952329728087}
 		{73E3592C-A422-4161-BC9A-089B9D73D45E} = {A8CD4AFF-1EEC-4F7A-B645-7BAE6D0C7161}
 		{22ECBC9D-6C95-497F-98A0-BAE1204AAED7} = {A3E5DE41-CD5B-4A81-BCAF-12037517BF8A}
+		{52E95B63-AA7E-4F3A-BB65-093B329E1F9C} = {799340F9-6555-438E-8182-93167538DDDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72434A46-56A0-454C-968A-E1748DD42DF6}
