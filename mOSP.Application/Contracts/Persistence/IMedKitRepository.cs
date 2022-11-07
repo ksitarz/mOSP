@@ -10,7 +10,7 @@ namespace mOSP.Application.Contracts.Persistence
 {
     public interface IMedKitRepository : IAsyncRepository<MedKit>
     {
-        Task<List<MedKit>> GetMedKitWithItem(SearchMedItemOptions searchOptions);
+        Task<List<MedKit>> GetMedKitWithItem(int containerId, SearchMedItemOptions searchOptions);
     }
 
 }

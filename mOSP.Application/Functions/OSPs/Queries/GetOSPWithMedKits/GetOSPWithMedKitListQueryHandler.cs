@@ -23,7 +23,7 @@ namespace mOSP.Application.Functions.OSPs.Queries
 
         public async Task<List<OSPWithMedKitsViewModel>> Handle(GetOSPWithMedKitListQuery request, CancellationToken cancellationToken)
         {
-            var list = await _ospRepository.GetOspWithMedKit();
+            var list = await _ospRepository.GetOspWithMedKit(request.OspId);
             return _mapper.Map<List<OSPWithMedKitsViewModel>>(list);
         }
     }

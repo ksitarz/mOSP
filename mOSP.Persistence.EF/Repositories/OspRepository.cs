@@ -1,4 +1,5 @@
-﻿using mOSP.Application.Contracts.Persistence;
+﻿using Microsoft.EntityFrameworkCore;
+using mOSP.Application.Contracts.Persistence;
 using mOSP.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,14 @@ namespace mOSP.Persistence.EF.Repositories
         {
         }
 
-        public Task<List<OSP>> GetOspWithMedKit()
+        public async Task<List<OSP>> GetOspWithMedKit(int ospId)
         {
-            throw new NotImplementedException();
+            var osp = await _dbContext.Osps
+               .Where(o => o.OspId == ospId)
+               .Include(o => o.Containers.Where(k =>k.OspId == ospId))
+               .ToListAsync();
+
+            return osp;
         }
     }
 }
