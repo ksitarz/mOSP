@@ -16,8 +16,9 @@ namespace mOSP.Application.Mapper
             CreateMap<MedItem, MedItemViewModel>().ReverseMap();
             CreateMap<MedItem, CreatedMedItemCommand>().ReverseMap();
             CreateMap<MedItem, UpdateMedItemCommand>().ReverseMap();
+            CreateMap<MedItem, MedItemDto>().ReverseMap();
 
-            CreateMap<MedKit, MedItemDto>();
+            CreateMap<MedKit, MedKitViewModel>().ReverseMap();
             CreateMap<MedKit, CreatedMedKitCommand>().ReverseMap();
             CreateMap<MedKit, UpdateMedKitCommand>().ReverseMap();
             
