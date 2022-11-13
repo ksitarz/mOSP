@@ -13,7 +13,7 @@ namespace mOSP.Persistence.EF.Repositories
         {
         }
 
-        public async Task<List<OSP>> GetOspWithMedKit(int ospId)
+        public async Task<List<OSP>> GetOspWithContainers(int ospId)
         {
             var osp = await _dbContext.Osps
                .Where(o => o.OspId == ospId)
