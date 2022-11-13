@@ -9,6 +9,6 @@ namespace mOSP.Application.Contracts.Persistence
 {
     public interface IOspRepository : IAsyncRepository<OSP>
     {
-        Task<List<OSP>> GetOspWithMedKit(int OspId);
+        Task<List<OSP>> GetOspWithContainers(int OspId);
     }
 }
