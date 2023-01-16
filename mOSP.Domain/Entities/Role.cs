@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace mOSP.Domain.Entities
 {
-    internal class Role
+    public class Role
     {
+        public int RoleID { get; set; }
+        public string Name { get; set; }
     }
 }

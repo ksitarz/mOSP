@@ -15,6 +15,7 @@ namespace mOSP.Domain.Entities
         public string PasswordHash { get; set; }
 
         public int RoleID { get; set; }
+        public virtual Role Role { get; set; }    
 
         public int OspID { get; set; }
         public OSP Osp { get; set; }
