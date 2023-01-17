@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using mOSP.Domain.Entities;
 
 namespace mOSP.Application.Contracts.Persistence
 {
-    public interface IRoleRepository
+    public interface IRoleRepository : IAsyncRepository<Role>
     {
     }
 }

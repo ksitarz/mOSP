@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using mOSP.Domain.Entities;
-using System;
 
 namespace mOSP.Persistence.EF.Configuration
 {
