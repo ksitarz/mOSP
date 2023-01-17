@@ -14,6 +14,8 @@ namespace mOSP.Persistence.EF
         public DbSet<OSP> Osps { get; set; }
         public DbSet<MedKit> MedKits { get; set; }
         public DbSet<MedItem> MedItems { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
