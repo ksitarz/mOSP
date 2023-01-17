@@ -2,7 +2,7 @@
 
 namespace mOSP.Application.Contracts.Persistence
 {
-    public interface IMedItemRepository : IAsyncRepository<MedItem>
+    public interface IRoleRepository : IAsyncRepository<Role>
     {
     }
 }
