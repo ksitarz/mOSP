@@ -17,4 +17,8 @@
     <ProjectReference Include="..\mOSP.Domain\mOSP.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Functions\Roles\Queries\" />
+  </ItemGroup>
+
 </Project>
