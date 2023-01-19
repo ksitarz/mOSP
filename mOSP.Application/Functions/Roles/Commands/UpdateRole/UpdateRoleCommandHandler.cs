@@ -20,6 +20,7 @@ namespace mOSP.Application.Functions.Roles.Commands
         {
             _mapper = mapper;
             _roleRepository = roleRepository;
+
         }
 
         public async Task<Unit> Handle(UpdateRoleCommand request, CancellationToken cancellationToken)
