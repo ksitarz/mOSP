@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace mOSP.Application.Functions.OSPs.Queries.GetOSP
+namespace mOSP.Application.Functions.OSPs.Queries
 {
     public class GetOSPQueryHandler : IRequestHandler<GetOSPQuery, OSPViewModel>
     {
