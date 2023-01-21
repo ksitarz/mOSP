@@ -4,8 +4,6 @@ using mOSP.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mOSP.Application.UnitTest.Mocks
 {
@@ -92,6 +90,33 @@ namespace mOSP.Application.UnitTest.Mocks
             return mockOspRepository;
         }
 
+        public static Mock<IRoleRepository> GetRoleRepository()
+        {
+            var roles = GetRoles();
+
+            var mockRoleRepository = new Mock<IRoleRepository>();
+            mockRoleRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(roles);
+
+            mockRoleRepository.Setup(repo => repo.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((int id) =>
+            {
+                var role = roles.FirstOrDefault(i => i.RoleID == id);
+                return role;
+            });
+
+            mockRoleRepository.Setup(repo => repo.AddAsync(It.IsAny<Role>())).ReturnsAsync(
+                (Role role) =>
+                {
+                    roles.Add(role);
+                    return role;
+                });
+
+            mockRoleRepository.Setup(repo => repo.DeleteAsync(It.IsAny<Role>())).Callback<Role>((entity) => roles.Remove(entity));
+
+            mockRoleRepository.Setup(repo => repo.UpdateAsync(It.IsAny<Role>())).Callback<Role>((entity) => { roles.Remove(entity); roles.Add(entity); });
+
+            return mockRoleRepository;
+        }
+
         public static List<MedItem> GetMedItems()
         {
             MedItem i1 = new MedItem()
@@ -163,7 +188,6 @@ namespace mOSP.Application.UnitTest.Mocks
                 Name = "Kit1",
                 OspId = 1,
                 CreatedDate = DateTime.Now,
-                
             };
 
             MedKit k2 = new MedKit()
@@ -172,16 +196,14 @@ namespace mOSP.Application.UnitTest.Mocks
                 Name = "Kit2",
                 OspId = 1,
                 CreatedDate = DateTime.Now,
-
             };
 
-            MedKit k3= new MedKit()
+            MedKit k3 = new MedKit()
             {
                 ContainerId = 3,
                 Name = "Kit3",
                 OspId = 1,
                 CreatedDate = DateTime.Now,
-
             };
 
             MedKit k4 = new MedKit()
@@ -190,7 +212,6 @@ namespace mOSP.Application.UnitTest.Mocks
                 Name = "Kit4",
                 OspId = 1,
                 CreatedDate = DateTime.Now,
-
             };
 
             MedKit k5 = new MedKit()
@@ -199,7 +220,6 @@ namespace mOSP.Application.UnitTest.Mocks
                 Name = "Kit5",
                 OspId = 1,
                 CreatedDate = DateTime.Now,
-
             };
 
             List<MedKit> k = new List<MedKit>();
@@ -231,6 +251,33 @@ namespace mOSP.Application.UnitTest.Mocks
             o.Add(o2);
 
             return o;
+        }
+
+        public static List<Role> GetRoles()
+        {
+            Role user = new Role()
+            {
+                RoleID = 1,
+                Name = "User"
+            };
+
+            Role manager = new Role()
+            {
+                RoleID = 2,
+                Name = "Manager"
+            };
+            Role admin = new Role()
+            {
+                RoleID = 3,
+                Name = "Admin"
+            };
+
+            List<Role> roles = new List<Role>();
+            roles.Add(user);
+            roles.Add(manager);
+            roles.Add(admin);
+
+            return roles;
         }
     }
 }
