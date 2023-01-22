@@ -8,7 +8,7 @@ namespace mOSP.Domain.Entities
 {
     public class Role
     {
-        public int RoleID { get; set; }
+        public int RoleId { get; set; }
         public string Name { get; set; }
     }
 }

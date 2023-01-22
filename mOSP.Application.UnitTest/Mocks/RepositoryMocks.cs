@@ -99,7 +99,7 @@ namespace mOSP.Application.UnitTest.Mocks
 
             mockRoleRepository.Setup(repo => repo.GetByIdAsync(It.IsAny<int>())).ReturnsAsync((int id) =>
             {
-                var role = roles.FirstOrDefault(i => i.RoleID == id);
+                var role = roles.FirstOrDefault(i => i.RoleId == id);
                 return role;
             });
 
@@ -257,18 +257,18 @@ namespace mOSP.Application.UnitTest.Mocks
         {
             Role user = new Role()
             {
-                RoleID = 1,
+                RoleId = 1,
                 Name = "User"
             };
 
             Role manager = new Role()
             {
-                RoleID = 2,
+                RoleId = 2,
                 Name = "Manager"
             };
             Role admin = new Role()
             {
-                RoleID = 3,
+                RoleId = 3,
                 Name = "Admin"
             };
 

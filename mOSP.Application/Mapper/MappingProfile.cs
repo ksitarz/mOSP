@@ -32,6 +32,7 @@ namespace mOSP.Application.Mapper
             CreateMap<OSP, OSPWithContainersViewModel>().ReverseMap();
 
             CreateMap<Role, CreatedRoleCommand>().ReverseMap();
+            CreateMap<Role, UpdateRoleCommand>().ReverseMap();
             CreateMap<Role, RoleViewModel>().ReverseMap();
 
         }
