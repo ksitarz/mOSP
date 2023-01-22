@@ -19,7 +19,7 @@ namespace mOSP.Persistence.EF.Configuration
                 .IsRequired();
             builder.Property(e => e.PasswordHash)
                 .IsRequired();
-            builder.Property(e => e.RoleID)
+            builder.Property(e => e.RoleId)
                 .IsRequired();
         }
     }
