@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using mOSP.Domain.Common;
 using System;
-using System.Collections.Generic;
 
 namespace mOSP.Application.Functions.MedKits.Commands
 {

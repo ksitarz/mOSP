@@ -23,7 +23,7 @@ namespace mOSP.Application.Functions.Roles.Queries
 
         public async Task<RoleViewModel> Handle(GetRoleQuery request, CancellationToken cancellationToken)
         {
-            var role = await _roleRepository.GetByIdAsync(request.RoleID);
+            var role = await _roleRepository.GetByIdAsync(request.RoleId);
             var roleMaped = _mapper.Map<RoleViewModel>(role);
 
             return roleMaped;

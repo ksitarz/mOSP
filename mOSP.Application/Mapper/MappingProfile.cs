@@ -7,6 +7,7 @@ using mOSP.Application.Functions.OSPs.Commands;
 using mOSP.Application.Functions.OSPs.Queries;
 using mOSP.Application.Functions.Roles.Commands;
 using mOSP.Application.Functions.Roles.Queries;
+using mOSP.Application.Functions.Users.Commands;
 using mOSP.Domain.Common;
 using mOSP.Domain.Entities;
 
@@ -32,7 +33,10 @@ namespace mOSP.Application.Mapper
             CreateMap<OSP, OSPWithContainersViewModel>().ReverseMap();
 
             CreateMap<Role, CreatedRoleCommand>().ReverseMap();
+            CreateMap<Role, UpdateRoleCommand>().ReverseMap();
             CreateMap<Role, RoleViewModel>().ReverseMap();
+
+            
 
         }
     }

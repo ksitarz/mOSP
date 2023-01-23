@@ -9,18 +9,18 @@ namespace mOSP.Persistence.EF.Seeder
         {
             Role user = new Role()
             {
-                RoleID= 1,
+                RoleId= 1,
                 Name = "User"
             };
 
             Role manager = new Role()
             {
-                RoleID= 2,
+                RoleId= 2,
                 Name = "Manager"
             };
             Role admin = new Role()
             {
-                RoleID= 3,
+                RoleId= 3,
                 Name = "Admin"
             };
 

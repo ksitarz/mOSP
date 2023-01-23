@@ -29,7 +29,7 @@ namespace mOSP.Application.Functions.Roles.Commands
 
             role = await _roleRepository.AddAsync(role);
 
-            return new CreatedRoleCommandResponse(role.RoleID);
+            return new CreatedRoleCommandResponse(role.RoleId);
         }
     }
 }

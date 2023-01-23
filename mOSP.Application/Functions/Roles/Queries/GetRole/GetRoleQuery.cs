@@ -9,6 +9,6 @@ namespace mOSP.Application.Functions.Roles.Queries
 {
     public class GetRoleQuery : IRequest<RoleViewModel>
     {
-        public int RoleID { get; set; }
+        public int RoleId { get; set; }
     }
 }
