@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace mOSP.Application.Functions.Users.Commands
+namespace mOSP.Application.Functions.Users.Commands.CreateUser
 {
     public class CreatedUserCommandValidator : AbstractValidator<CreatedUserCommand>
     {

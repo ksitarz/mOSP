@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace mOSP.Application.Functions.Users.Commands
+namespace mOSP.Application.Functions.Users.Commands.CreateUser
 {
     public class CreatedUserCommand : IRequest<CreatedUserCommandResponse>
     {

@@ -20,6 +20,7 @@ namespace mOSP.Persistence.EF
             services.AddScoped<IMedKitRepository, MedKitRepository>();
             services.AddScoped<IOspRepository, OspRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             return services;
         }
     }

@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
 using mOSP.Application.Responses;
 
-namespace mOSP.Application.Functions.Users.Commands
+namespace mOSP.Application.Functions.Users.Commands.CreateUser
 {
     public class CreatedUserCommandResponse : BaseResponse
     {

@@ -6,7 +6,7 @@ using mOSP.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace mOSP.Application.Functions.Users.Commands
+namespace mOSP.Application.Functions.Users.Commands.CreateUser
 {
     public class CreatedUserCommandHandler : IRequestHandler<CreatedUserCommand, CreatedUserCommandResponse>
     {
@@ -35,7 +35,7 @@ namespace mOSP.Application.Functions.Users.Commands
                 Email = request.Email,
                 FirstName = request.FirstName,
                 LastName = request.LastName,
-                RoleId = request.RoleId
+                RoleId = 1
 
             };
             var hashedPassword = _passwordHasher.HashPassword(newUser, request.Password);
