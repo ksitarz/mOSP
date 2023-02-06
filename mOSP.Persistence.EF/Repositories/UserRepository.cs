@@ -1,10 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using mOSP.Application.Contracts.Persistence;
 using mOSP.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace mOSP.Persistence.EF.Repositories
@@ -19,6 +15,13 @@ namespace mOSP.Persistence.EF.Repositories
         {
             return await _dbContext.Users.AnyAsync(u => u.Email == email);
   
+        }
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            return await _dbContext.Users
+                .Include(u => u.Role)
+                .FirstOrDefaultAsync(u => u.Email == email);
         }
     }
 }
