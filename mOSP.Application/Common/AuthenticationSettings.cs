@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Hosting;
 
-namespace mOSP.Api
+namespace mOSP.Application
 {
     public class AuthenticationSettings
     {

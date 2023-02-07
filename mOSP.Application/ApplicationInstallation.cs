@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using mOSP.Domain.Entities;
 using System.Reflection;
@@ -13,6 +14,7 @@ namespace mOSP.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+            
 
             return services;
         }

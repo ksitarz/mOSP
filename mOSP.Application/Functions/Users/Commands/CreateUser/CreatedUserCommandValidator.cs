@@ -33,11 +33,6 @@ namespace mOSP.Application.Functions.Users.Commands.CreateUser
             RuleFor(u => u.ConfirmPassword)
                .Equal(e => e.Password);
 
-            RuleFor(u => u.RoleId)
-               .NotEmpty()
-               .WithMessage("{PropertyName} is required")
-               .NotNull();
-
             RuleFor(u => u.Email)
                 .Custom((value, context) =>
                 {
