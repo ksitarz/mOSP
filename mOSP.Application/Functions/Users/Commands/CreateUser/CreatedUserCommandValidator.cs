@@ -1,20 +1,14 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace mOSP.Application.Functions.Users.Commands
+namespace mOSP.Application.Functions.Users.Commands.CreateUser
 {
     public class CreatedUserCommandValidator : AbstractValidator<CreatedUserCommand>
     {
-        public CreatedUserCommandValidator()
+        public CreatedUserCommandValidator(bool emailInUse)
         {
             RuleFor(u => u.Email)
                .NotEmpty()
                .WithMessage("{PropertyName} is required")
-               .EmailAddress()
                .NotNull();
 
             RuleFor(u => u.FirstName)
@@ -35,10 +29,17 @@ namespace mOSP.Application.Functions.Users.Commands
                .MinimumLength(8)
                .NotNull();
 
-            RuleFor(u => u.RoleId)
-               .NotEmpty()
-               .WithMessage("{PropertyName} is required")
-               .NotNull();
+            RuleFor(u => u.ConfirmPassword)
+               .Equal(e => e.Password);
+
+            RuleFor(u => u.Email)
+                .Custom((value, context) =>
+                {
+                    if (emailInUse)
+                    {
+                        context.AddFailure("Email", "That email is taken");
+                    }
+                });
         }
     }
 }

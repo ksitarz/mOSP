@@ -2,34 +2,29 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using mOSP.Application.Contracts.Persistence;
-using mOSP.Application.Functions.Roles.Commands;
 using mOSP.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace mOSP.Application.Functions.Users.Commands
+namespace mOSP.Application.Functions.Users.Commands.CreateUser
 {
     public class CreatedUserCommandHandler : IRequestHandler<CreatedUserCommand, CreatedUserCommandResponse>
     {
         private readonly IUserRepository _userRepository;
-        private readonly IMapper _mapper;
         private readonly IPasswordHasher<User> _passwordHasher;
 
         public CreatedUserCommandHandler(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher)
         {
             _userRepository = userRepository;
-            _mapper = mapper;
             _passwordHasher = passwordHasher;
 
         }
 
         public async Task<CreatedUserCommandResponse> Handle(CreatedUserCommand request, CancellationToken cancellationToken)
         {
-            var validator = new CreatedUserCommandValidator();
+            var emailInUse = _userRepository.EmailInUse(request.Email).Result;
+
+            var validator = new CreatedUserCommandValidator(emailInUse);
             var validatorResult = await validator.ValidateAsync(request);
 
             if (!validatorResult.IsValid)
@@ -40,7 +35,8 @@ namespace mOSP.Application.Functions.Users.Commands
                 Email = request.Email,
                 FirstName = request.FirstName,
                 LastName = request.LastName,
-                RoleId = request.RoleId
+                RoleId = 1,
+                OspId =1
 
             };
             var hashedPassword = _passwordHasher.HashPassword(newUser, request.Password);
