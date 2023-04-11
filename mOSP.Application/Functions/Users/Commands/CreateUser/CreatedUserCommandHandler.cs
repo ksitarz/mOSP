@@ -35,7 +35,8 @@ namespace mOSP.Application.Functions.Users.Commands.CreateUser
                 Email = request.Email,
                 FirstName = request.FirstName,
                 LastName = request.LastName,
-                RoleId = 1
+                RoleId = 1,
+                OspId =1
 
             };
             var hashedPassword = _passwordHasher.HashPassword(newUser, request.Password);

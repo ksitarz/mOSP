@@ -20,9 +20,9 @@ namespace mOSP.Api.Controllers
         }
 
         [HttpPost("Login")]
-        public ActionResult Login([FromBody] LoginUserQuery loginUserQuery)
+        public async Task<ActionResult> Login([FromBody] LoginUserQuery loginUserQuery)
         {
-            var token = _mediator.Send(loginUserQuery);
+            var token = await _mediator.Send(loginUserQuery);
             return Ok(token);
 
         }

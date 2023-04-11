@@ -9,7 +9,6 @@ namespace mOSP.Application.Functions.Users.Commands.CreateUser
             RuleFor(u => u.Email)
                .NotEmpty()
                .WithMessage("{PropertyName} is required")
-               .EmailAddress()
                .NotNull();
 
             RuleFor(u => u.FirstName)
